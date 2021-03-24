@@ -41,10 +41,24 @@ const Card = (props)=>{
              ellipsizeMode="tail"
              numberOfLines={2}
              >{props.title}</Text>
-            <Text style={{
-                color:textcolor
+             <View style={{
+                 flexDirection: 'row',
+                 flexWrap: 'wrap',
+             }}>
+                <Text style={{
+                    color:textcolor
 
-            }}>{props.channel}</Text>
+                }}>{props.channel}</Text>
+                <Text style={{
+                    color:textcolor
+
+                }}>{'100 переглядів'}</Text>
+                <Text style={{
+                    color:textcolor
+
+                }}>{'24.03.2021'}</Text>
+             </View>
+            
          </View>
          
      </View>
