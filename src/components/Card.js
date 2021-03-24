@@ -15,7 +15,7 @@ const Card = (props)=>{
       
       >
           <Image 
-           source={{uri:`https://i.ytimg.com/vi/${props.videoId}/hqdefault.jpg`}}
+           source={require('../../assets/hq720.png')}
            style={{
                width:"100%",
                height:200

@@ -14,9 +14,11 @@ export default function HomeScreen({navigation}) {
     inputRange:[0,45],
     outputRange:[0,-45]
   })
-  const cardData = useSelector(state=>{
-    return state.cardData
-  })
+  const cardData = [1,2,3,4,5,6,7,8,9,10].map(item => ({
+    videoId: item,
+    title: 'new video',
+    channelTitle: 'Roman Ortynskyi',
+  }))
   return (
     <View style={{flex:1}}>
       <Animated.View
@@ -35,13 +37,13 @@ export default function HomeScreen({navigation}) {
       data={cardData}
       renderItem={({item})=>{
         return <Card
-        videoId={item.id.videoId}
-        title={item.snippet.title}
-        channel={item.snippet.channelTitle}
+        videoId={item.videoId}
+        title={item.title}
+        channel={item.channelTitle}
         />
       }}
     
-      keyExtractor={item=>item.id.videoId}
+      keyExtractor={item=>item.videoId}
       onScroll={(e)=>{
           scrollY.setValue(e.nativeEvent.contentOffset.y) 
       }}
